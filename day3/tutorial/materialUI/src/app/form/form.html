@@ -1,0 +1,74 @@
+<div>
+<h1>
+    Form Elements
+</h1>
+<div id="parent">
+    <div class="form-class">
+        <mat-form-field id="name">
+            <mat-label>Full Name</mat-label>
+            <input type="text" matInput id="name" placeholder="Enter your fullname">
+        </mat-form-field>
+
+        <mat-form-field id="email">
+            <mat-label>Email</mat-label>
+            <input type="email" matInput id="email" placeholder="Enter your email">
+        </mat-form-field>
+
+        <mat-form-field id="password">
+            <mat-label>Password</mat-label>
+            <input type="password" matInput id="password" placeholder="Enter your password">
+        </mat-form-field>
+
+        <mat-form-field id="date">
+            <mat-label>Date of Birth</mat-label>
+            <input matInput [matDatepicker]="picker" placeholder="MM/DD/YYYY">
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        
+        <mat-radio-group aria-label="Select an option">
+            <mat-label>Gender</mat-label>
+            <div>
+                <mat-radio-button value="male">Male</mat-radio-button>
+                <mat-radio-button value="female">Female</mat-radio-button>
+            </div>
+        </mat-radio-group>
+
+        <section class="example-section">
+            <mat-label>Vehicle(s)</mat-label>
+            <div>
+                <mat-checkbox>Car</mat-checkbox>
+                <mat-checkbox>Motorcycle</mat-checkbox>
+                <mat-checkbox>Truck</mat-checkbox>
+            </div>
+        </section>
+
+        <mat-form-field id="address">
+            <mat-label>Address</mat-label>
+            <textarea matInput></textarea>
+        </mat-form-field>
+
+        <mat-form-field>
+                <mat-label>Select Prefix</mat-label>
+                <select matNativeControl>
+                    <option value="Mr">Mr.</option>
+                    <option value="Mrs">Mrs.</option>
+                    <option value="Ms">Ms.</option>
+                </select>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Phone Number</mat-label>
+            <span id='num-prefix' matPrefix>+91&nbsp;</span>
+            <input matInput type="tel">
+        </mat-form-field>
+
+        <section id="button">
+        <div >
+            <button matButton="filled">Submit</button>
+            <!-- <button matButton="filled" disabled>Disabled</button> -->
+        </div>
+        </section>
+    </div>
+</div>
+

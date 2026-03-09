@@ -1,0 +1,78 @@
+<div>
+<h1>
+    Form Elements
+</h1>
+<div id="parent">
+        <form [formGroup]="formElements" (ngSubmit)="onSubmit()">
+            <mat-form-field id="name">
+                <mat-label>Full Name</mat-label>
+                <input type="text" matInput id="name" placeholder="Enter your fullname" formControlName="name">
+            </mat-form-field>
+
+            <mat-form-field id="email">
+                <mat-label>Email</mat-label>
+                <input type="email" matInput id="email" placeholder="Enter your email" formControlName="email">
+            </mat-form-field>
+
+            <mat-form-field id="password">
+                <mat-label>Password</mat-label>
+                <input type="password" matInput id="password" placeholder="Enter your password" formControlName="password">
+            </mat-form-field>
+
+            <mat-form-field id="date">
+                <mat-label>Date of Birth</mat-label>
+                <input matInput [matDatepicker]="picker" placeholder="MM/DD/YYYY" formControlName="dateOfBirth">
+                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+            
+            <mat-radio-group aria-label="Select an option" formControlName="gender">
+                <mat-label>Gender</mat-label>
+                <div>
+                    <mat-radio-button value="male">Male</mat-radio-button>
+                    <mat-radio-button value="female">Female</mat-radio-button>
+                </div>
+            </mat-radio-group>
+
+            <section class="example-section" >
+                <mat-label>Vehicle(s)</mat-label>
+                <div>
+                    <mat-checkbox formControlName="Car">Car</mat-checkbox>
+                    <mat-checkbox formControlName="Motorcycle">Motorcycle</mat-checkbox>
+                    <mat-checkbox formControlName="Truck">Truck</mat-checkbox>
+                </div>
+            </section>
+
+            <mat-form-field id="address">
+                <mat-label>Address</mat-label>
+                <textarea matInput formControlName="address"></textarea>
+            </mat-form-field>
+
+            <mat-form-field >
+                    <mat-label>Select Prefix</mat-label>
+                    <select matNativeControl formControlName="prefix">
+                        <option value="Mr">Mr.</option>
+                        <option value="Mrs">Mrs.</option>
+                        <option value="Ms">Ms.</option>
+                    </select>
+            </mat-form-field>
+
+            <span id="phoneComp">
+                <mat-form-field id="phone" >
+                    <mat-label>Phone Number</mat-label>
+                    <span id='num-prefix' matPrefix>+91&nbsp;</span>
+                    <input matInput type="tel" formControlName="phoneNumber">
+                    @if(!phoneValidation(formElements.value.phoneNumber)){
+                      <app-error></app-error>
+                    }
+                </mat-form-field> 
+            </span>
+
+            <section id="button">
+            <div >
+                <button matButton="filled" type="submit" [disabled]="!formCheck()">Submit</button>
+            </div>
+            </section>
+        </form>
+</div>
+

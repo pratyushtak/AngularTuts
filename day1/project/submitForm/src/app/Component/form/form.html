@@ -1,0 +1,35 @@
+<div>
+    <form (ngSubmit)="onSubmit()">
+        <label for="text" id="change-line" >Text Input</label>
+        <input type="text" id="text" name="text" [(ngModel)]="text"/>
+        <label for="password" id="change-line" >Password Input</label>
+        <input type="password" id="password" name="password" [(ngModel)]="password"/>
+        <label for="email" id="change-line" >Email Input</label>
+        <input type="email" id="email" name="email" [(ngModel)]="email" required/>
+        <p>Select radio option:-</p>
+            <div>
+                <label for="radio1">Option 1</label>
+                <input type="radio" id="radio1" name="radio" value="Option 1" [(ngModel)]="radioOption"/>
+            </div>
+            <div>
+                <label for="radio2">Option 2</label>
+                <input type="radio" id="radio2" name="radio" value="Option 2" [(ngModel)]="radioOption"/>
+            </div>
+        <p>Select checkbox options:-</p>
+            <div>
+                <label for="checkbox1">Option 1</label>
+                <input type="checkbox" id="checkbox1" name="checkbox" value="Option 1" (change)="onCheckboxChange($event)"/>
+            </div>
+            <div>
+                <label for="checkbox2">Option 2</label>
+                <input type="checkbox" id="checkbox2" name="checkbox" value="Option 2" (change)="onCheckboxChange($event)"/>
+            </div>
+        <label for="dropdown" id="dropdown">Dropdown</label>
+            <select id="dropdown" [(ngModel)]="dropdown" name="dropdown">
+                <option value="Option 1" >Option 1</option>
+                <option value="Option 2">Option 2</option>
+            </select>
+
+        <button type="submit" class="sub-btn">Submit</button>
+    </form>
+</div>
