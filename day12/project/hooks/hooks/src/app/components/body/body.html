@@ -1,0 +1,10 @@
+<input type="text" for="ptoc" [(ngModel)] = 'inputVal' >
+<button (click)="sendToChild()">Send to Child</button>
+<p>{{inputVal}}</p>
+<button (click)="toggleShow()">Toggle Show</button>
+
+@if(show){
+    <app-body-child [name] = "bodyData" >
+        Ng Content
+    </app-body-child>
+}

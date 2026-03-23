@@ -1,0 +1,85 @@
+@if(alertMessage){
+  <div class="alert alert-warning alert-dismissible fade show" id="alert" role="alert">
+    <strong>Choose at least one vehicle</strong>
+    <button type="button" class="btn-close" (click)="alertMessage=false"></button>
+  </div>
+}
+<div id="parent">
+  <h1>
+    Form Elements
+  </h1>
+  <form #Form="ngForm" (ngSubmit)="onSubmit()">
+    <mat-form-field>
+      <mat-label>Full Name</mat-label>
+      <input matInput type="text" placeholder="Enter your fullname" name="name" [(ngModel)]="name" #nameModel="ngModel" required >
+      @if(!isValidName()){
+        <app-name></app-name>
+      }
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Email</mat-label>
+      <input matInput type="email" placeholder="Enter your email"name="email" [(ngModel)]="email" #emailModel="ngModel" required pattern="^[a-zA-Z]+@[a-zA-Z ]+\.[a-zA-Z ]+$">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Password</mat-label>
+      <input matInput type="password" placeholder="Enter your password" name="password" [(ngModel)]="password" #passwordModel="ngModel" required minlength="6">
+    </mat-form-field>
+
+    <mat-form-field>
+    <mat-label>Date of Birth</mat-label>
+
+    <input matInput [matDatepicker]="picker" placeholder="MM/DD/YYYY" name="dateOfBirth" [(ngModel)]="dateOfBirth" [max]="maxDate" required>
+      <mat-datepicker-toggle matIconSuffix [for]="picker" ></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    
+    <mat-radio-group name="gender" [(ngModel)]="gender" #genderModel="ngModel" required>
+      <mat-label>Gender</mat-label>
+        <div>
+          <mat-radio-button value="male">Male</mat-radio-button>
+          <mat-radio-button value="female">Female</mat-radio-button>
+        </div>
+    </mat-radio-group>
+
+    <section>
+      <mat-label>Vehicle(s)</mat-label>
+      <div>
+        <mat-checkbox name="car" [(ngModel)]="car">Car</mat-checkbox>
+        <mat-checkbox name="motorcycle" [(ngModel)]="motorcycle">Motorcycle</mat-checkbox>
+        <mat-checkbox name="truck" [(ngModel)]="truck">Truck</mat-checkbox>
+      </div>
+    </section>
+
+    <mat-form-field id="address">
+      <mat-label >Address</mat-label>
+        <textarea name='address' matInput [(ngModel)]="address" required></textarea>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Select State</mat-label>
+
+      <select matNativeControl name="state" [(ngModel)]="state" required>
+        <option value="Rajasthan">Rajasthan</option>
+        <option value="Maharashtra">Maharashtra</option>
+        <option value="Tamil Nadu">Tamil Nadu</option>
+      </select>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Phone Number</mat-label>
+        <span matPrefix>+91&nbsp;</span>
+        <input matInput type="tel" name="phoneNumber" [(ngModel)]="phoneNumber" #phoneModel="ngModel" required>
+        @if(!phoneError.isValidPhoneNumber(this.phoneNumber)){
+          <p id="invalid-num">Invalid Phone Number!</p>
+        }
+    </mat-form-field>
+
+    <section>
+      <button matButton="filled" type="submit" [disabled]="Form.invalid||!isValidName()">
+        Submit
+      </button>
+    </section>
+  </form>
+</div>

@@ -1,0 +1,6 @@
+<mat-form-field class="example-full-width">
+    <mat-label>Child</mat-label>
+    <input matInput [(ngModel)]="childInput">
+</mat-form-field>
+<button matButton="outlined" class="rs" (click)="resetfun()">Reset</button>
+<button matButton="outlined" class='sb'(click)="sendDataToParent(childInput)">Submit</button>

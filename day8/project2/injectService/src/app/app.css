@@ -1,0 +1,29 @@
+app-header{
+    height: 20vh;
+    display: flex;
+    width: 97vw;
+    border: 2px solid black;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-left: 0.75%;
+    margin-top: 1%;
+}
+
+app-content{
+    display: flex;
+    height: 72vh;
+    width: 97vw;
+    margin-top: 20px;
+    border: 2px solid black;
+    justify-content: center;
+    align-items: center;
+    margin-left: 0.75%;
+}
+
+
+.dark{
+    background-color: black;
+    color: white;
+    border: 2px solid red;
+}

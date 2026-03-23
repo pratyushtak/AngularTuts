@@ -1,0 +1,15 @@
+div{
+    border: 1px solid black;
+    margin-top: 10px;
+    height: 38rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: pink;
+    flex-direction: column;
+}
+
+button{
+    border-radius: 10px;
+    width: 5rem;
+}

@@ -1,0 +1,21 @@
+app-child {
+    display: inline-block;
+    min-width: 20px;
+}
+
+mat-form-field{
+    height:70px;
+}
+#child{
+    margin-top: 10px;
+}
+
+.rs{
+    margin-left: 5%;
+}
+
+.pr{
+    margin-left: 58%;
+}
+
+

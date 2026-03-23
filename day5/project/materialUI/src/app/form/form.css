@@ -1,0 +1,54 @@
+#parent{
+    display: flex;
+    justify-content: center;
+    margin: 5%;
+    margin-top: 50px;
+}
+form{
+    display: grid;
+    
+    grid-template-columns: 1fr 1fr;
+    width: 50%;
+    column-gap: 50px;
+    row-gap: 20px;
+}
+
+
+mat-hint{
+    font-size: 10px;
+}
+#name{
+    width: 100%;
+}
+
+#address{
+    grid-column: span 2;
+}
+
+#num-prefix{
+    margin-left: 5px;
+    height: 100%;
+}
+
+#button{
+    grid-column: 2;
+    justify-self: end;
+}
+
+h1{
+    margin-left: 27%;
+    margin-bottom: 10px;
+    padding-bottom: 0px;
+}
+
+#phone{
+    width: 100%;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+}
+
+app-error{
+    padding-top: 0px;
+}
+
+

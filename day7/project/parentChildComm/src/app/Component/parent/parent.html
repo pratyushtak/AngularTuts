@@ -1,0 +1,11 @@
+
+<form>
+  <mat-form-field >
+    <mat-label>Parent</mat-label>
+    <input matInput [(ngModel)]="parentValue" name="parent">
+  </mat-form-field>
+</form>
+<div id="child">
+    <span>Value in child-></span>
+    <app-child [pVal]="parentValue"></app-child>
+</div>

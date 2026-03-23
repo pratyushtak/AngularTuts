@@ -1,0 +1,13 @@
+<div id="navbar">
+    <div id="navbar-left">
+        <div routerLink="/" routerLinkActive="btn-click" [routerLinkActiveOptions]="{exact: true}">Home</div>
+        <div routerLink="/about" routerLinkActive="btn-click" [routerLinkActiveOptions]="{exact: true}">About</div>
+        <div routerLink="/contact-us" routerLinkActive="btn-click" [routerLinkActiveOptions]="{exact: true}">Contact Us</div>
+        <div routerLink="/query-route" routerLinkActive="btn-click" [routerLinkActiveOptions]="{exact: true}">Query</div>
+        <div routerLink="/dashboard" routerLinkActive="btn-click" [routerLinkActiveOptions]="{exact: true}">Dashboard</div>
+    </div>
+    <div id="navbar-right">
+        <button *ngIf='this.AuthState.loginState==false' id="login" routerLink="/dashboard" (click)="login()" >Login</button>
+        <button *ngIf='this.AuthState.loginState==true'(click)="logout()" >Logout</button>
+    </div>
+</div>

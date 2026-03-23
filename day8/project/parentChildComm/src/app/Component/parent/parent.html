@@ -1,0 +1,13 @@
+
+<form>
+  <mat-form-field >
+    <mat-label>Parent</mat-label>
+    <input matInput [(ngModel)]="parentValue" name="parent">
+  </mat-form-field>
+  <button matButton="outlined" class='rs' (click)="resetfun()">Reset</button>
+  <button matButton="outlined" class="pr" (click)="submitfun()">Submit</button>
+</form>
+<div id="child">
+    <span>Value in child-></span>
+    <app-child [pVal]="parentVal"></app-child>
+</div>
