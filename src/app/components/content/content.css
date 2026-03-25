@@ -1,0 +1,33 @@
+#content{
+    width: 100%;
+    height: 95vh;
+    display: flex;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+.inside-cont{
+    height: 12rem;
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+
+app-pipe-display {
+    height: 10rem;
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#input-txt{
+    margin-bottom: 15px;
+}
+#orignal-txt{
+    flex-direction: column;
+}
+
+#customPipe{
+    flex-direction: column;
+}

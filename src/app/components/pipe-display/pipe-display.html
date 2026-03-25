@@ -1,0 +1,48 @@
+<div id="pipe-comp">
+    <!-- Matches to the pipe style with conditional rendering-->
+
+    @if(pipeStyle =='titleCase' ){
+        <h3>{{txtToPipe | titlecase}}</h3>
+        <p>Title Case</p>
+    }
+
+    @if(pipeStyle== 'datePipe'){
+        <h3>{{myDate | date}}</h3>
+        <p>Date</p>
+    }
+
+    @if(pipeStyle== 'jsonPipe'){     <!--  remaining -->
+        <h3>{{myObj | json}}</h3>
+        <p>Json</p>
+    }
+
+    @if(pipeStyle== 'keyValPipe'){   <!--  remaining -->
+         @for (item of myObj | keyvalue; track item.key) {
+            <h3>{{ item.key }} : {{ item.value }}</h3>
+        }
+        <p>Key Value </p>
+    }
+
+    @if(pipeStyle== 'lowerCase'){
+        <h3>{{txtToPipe | lowercase}}</h3>
+        <p>Lower Case</p>
+    }
+
+    @if(pipeStyle== 'slicePipe'){
+        <h3>{{txtToPipe | slice:0:3}}</h3>
+        <p>Slice</p>
+    }
+
+    @if(pipeStyle== 'upperCase'){
+        <h3>{{txtToPipe | uppercase}}</h3>
+        <p>Upper Case</p>
+    }
+    @if(pipeStyle== 'currencyPipe'){
+        <h3>{{numToPipe | currency}}</h3>
+        <p>Currency</p>
+    }
+    @if(pipeStyle== 'percentPipe'){
+        <h3>{{numToPipe | percent}}</h3>
+        <p>Percent</p>
+    }
+</div>

@@ -1,0 +1,48 @@
+<div id="content">
+    <div id="orignal-txt" class="inside-cont">
+        <div id="input-txt">
+            <input type="text" [(ngModel)]="userInputVal">
+            <button (click)="onSubmit()">Submit</button>
+        </div>
+        <div>
+            <input type="number" [(ngModel)]="userInputNumVal">
+            <button (click)="onSubmitNum()">Submit</button>
+        </div>
+    </div>
+
+    <!-- Component for Title Case pipe -->
+    <app-pipe-display [txtToPipe] = "toPipe" [pipeStyle]="'titleCase'"></app-pipe-display>
+
+    <!-- Component for Lower Case pipe -->
+    <app-pipe-display [txtToPipe] = "toPipe" [pipeStyle]="'lowerCase'"></app-pipe-display>
+
+    <!-- Component for Upper Case pipe -->
+    <app-pipe-display [txtToPipe] = "toPipe" [pipeStyle]="'upperCase'"></app-pipe-display>
+
+    <!-- Component for Currency pipe -->
+    <app-pipe-display [numToPipe] = "toPipeNum" [pipeStyle]="'currencyPipe'"></app-pipe-display>
+
+    <!-- Component for Percent pipe -->
+    <app-pipe-display [numToPipe] = "toPipeNum" [pipeStyle]="'percentPipe'"></app-pipe-display>
+
+    <!-- Component for Slice pipe -->
+    <app-pipe-display [txtToPipe] = "toPipe" [pipeStyle]="'slicePipe'"></app-pipe-display>
+
+    <!-- Component for Json pipe -->
+    <app-pipe-display [txtToPipe] = "toPipe" [pipeStyle]="'jsonPipe'"></app-pipe-display>
+
+    <!-- Component for key Val pipe -->
+    <app-pipe-display [txtToPipe] = "toPipe" [pipeStyle]="'keyValPipe'"></app-pipe-display>
+
+    <!-- Component for date pipe -->
+    <app-pipe-display [txtToPipe] = "toPipe" [pipeStyle]="'datePipe'"></app-pipe-display>
+
+    <!-- Custom Pipe -->
+    <div id ="customPipe" class="inside-cont">
+        @if(submitStat){
+            <h3>{{toPipe | star}}</h3>
+        }
+        <p>Custom Pipe</p>
+    </div>
+
+</div>
